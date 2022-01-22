@@ -11,7 +11,7 @@ function App() {
     <ThemeContextProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="acm-website-reactjs/" element={<LandingPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
