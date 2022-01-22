@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.abd64e84.css",
-    "main.js": "/static/js/main.fb8433a9.js",
-    "index.html": "/index.html",
-    "main.abd64e84.css.map": "/static/css/main.abd64e84.css.map",
-    "main.fb8433a9.js.map": "/static/js/main.fb8433a9.js.map"
+    "main.css": "/acm-website-reactjs/static/css/main.abd64e84.css",
+    "main.js": "/acm-website-reactjs/static/js/main.f0d4eb4e.js",
+    "index.html": "/acm-website-reactjs/index.html",
+    "main.abd64e84.css.map": "/acm-website-reactjs/static/css/main.abd64e84.css.map",
+    "main.f0d4eb4e.js.map": "/acm-website-reactjs/static/js/main.f0d4eb4e.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.fb8433a9.js"
+    "static/js/main.f0d4eb4e.js"
   ]
 }
