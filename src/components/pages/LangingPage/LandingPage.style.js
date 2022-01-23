@@ -20,10 +20,6 @@ export const MainContainer = styled.div`
   position: relative;
 `;
 
-export const ParticlesContainer = styled.div`
-  z-index: -1;
-`;
-
 export const Name = styled.h1`
   color: white;
   font-size: 6vw;
@@ -37,10 +33,6 @@ export const Location = styled.h1`
   font-size: 2vw;
   font-family: "Poppins", sans-serif;
 `;
-
-// .heading-continer{
-// }
-// <div className="heading-continer"></div>
 
 export const HeadingContainer = styled.div`
   /* position: absolute; */
