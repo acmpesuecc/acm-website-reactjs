@@ -18,6 +18,9 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
   position: relative;
+  /* scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh; */
 `;
 
 export const Name = styled.h1`
@@ -92,3 +95,10 @@ export const AboutImage = styled.img`
     margin-top: 20px;
   }
 `;
+
+// Scroll stuff
+
+// export const ScrollSection = styled.section`
+//   height: 100vh;
+//   scroll-snap-align: start;
+// `;

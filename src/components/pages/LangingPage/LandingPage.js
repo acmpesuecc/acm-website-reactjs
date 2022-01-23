@@ -40,6 +40,7 @@ function LandingPage() {
         </AboutContent>
         <AboutImage src={AboutPicture} alt="" />
       </AboutSectionContainer>
+
       <Footer />
     </MainContainer>
   );
