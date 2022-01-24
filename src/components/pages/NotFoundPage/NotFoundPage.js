@@ -1,10 +1,98 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ErrorPageContainer, ErrorPageArticle,Particle} from "./NotFoundPage.style";
 
 function NotFoundPage() {
   return (
-    <div>
-      <h1>404 Not found</h1>
-    </div>
+    <ErrorPageContainer>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>4</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <Particle>0</Particle>
+  <ErrorPageArticle>
+    <p>Damnit stranger,</p>
+    <p>You got lost in the <strong>404</strong> galaxy.</p>
+    <p>
+      <a href="/"><button>Go back to earth.</button></a>
+    </p>
+  </ErrorPageArticle>
+</ErrorPageContainer>
+
   );
 }
 
