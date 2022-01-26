@@ -1,3 +1,7 @@
+// https://www.npmjs.com/package/react-intersection-observer
+// https://tympanus.net/codrops/2019/12/16/scroll-refraction-and-shader-effects-in-three-js-and-react/
+// https://www.framer.com/tutorials/
+
 import React, { useContext } from "react";
 import {
   MainContainer,
@@ -8,6 +12,9 @@ import {
   AboutHeading,
   AboutContent,
   AboutImage,
+  ScrollOuterContainer,
+  ScrollInnerContainer,
+  ScrollScreen,
 } from "./LandingPage.style";
 import Footer from "../../custom/Footer/Footer";
 import NavBar from "../../custom/NavBar/NavBar";
@@ -22,7 +29,8 @@ function LandingPage() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <MainContainer>
+    <>
+      {/* <MainContainer>
       <NavBar />
       <HeadingContainer>
         <Name>ACM PES UNIVERSITY</Name>
@@ -42,7 +50,16 @@ function LandingPage() {
       </AboutSectionContainer>
 
       <Footer />
-    </MainContainer>
+    </MainContainer> */}
+      <ScrollOuterContainer>
+        <ScrollInnerContainer>
+          <ScrollScreen>1</ScrollScreen>
+          <ScrollScreen>2</ScrollScreen>
+          <ScrollScreen>3</ScrollScreen>
+          <ScrollScreen>4</ScrollScreen>
+        </ScrollInnerContainer>
+      </ScrollOuterContainer>
+    </>
   );
 }
 

@@ -102,3 +102,34 @@ export const AboutImage = styled.img`
 //   height: 100vh;
 //   scroll-snap-align: start;
 // `;
+
+//////////////////////////// Horizontal Scrolling ////////////////////////////
+
+export const ScrollOuterContainer = styled.div`
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ScrollInnerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+`;
+
+export const ScrollScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  color: white;
+`;
