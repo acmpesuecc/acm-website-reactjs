@@ -3,6 +3,7 @@
 // https://www.framer.com/tutorials/
 
 import React, { useContext } from "react";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   MainContainer,
   Name,
@@ -27,6 +28,9 @@ import AboutPicture from "./assets/about.jpg";
 
 function LandingPage() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { scrollYProgress, scrollXProgress, scrollX, scrollY } =
+    useViewportScroll();
+  const scale = useTransform(scrollY, [0, 2000], [0, 2000]);
 
   return (
     <>
@@ -51,14 +55,32 @@ function LandingPage() {
 
       <Footer />
     </MainContainer> */}
-      <ScrollOuterContainer>
+      {/* <ScrollOuterContainer>
         <ScrollInnerContainer>
           <ScrollScreen>1</ScrollScreen>
           <ScrollScreen>2</ScrollScreen>
           <ScrollScreen>3</ScrollScreen>
           <ScrollScreen>4</ScrollScreen>
         </ScrollInnerContainer>
-      </ScrollOuterContainer>
+      </ScrollOuterContainer> */}
+
+      <motion.div
+        style={{
+          width: "100vw",
+          height: "300vh",
+        }}
+      >
+        <motion.span
+          style={{
+            color: "white",
+            position: "sticky",
+            top: "0",
+            left: scale,
+          }}
+        >
+          hiii
+        </motion.span>
+      </motion.div>
     </>
   );
 }
