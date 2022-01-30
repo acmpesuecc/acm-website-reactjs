@@ -7,6 +7,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   MainContainer,
   TestStickyContainer,
+  BackgroundImage,
   //   Name,
   //   Location,
   //   HeadingContainer,
@@ -27,6 +28,7 @@ import ThemeToggleButton from "../../custom/ThemeToggleButton";
 import QuoteCard from "./QuoteCard";
 import AboutPicture from "./assets/about.jpg";
 import UseWindowDimensions from "../../../services/UseWindowDimentions.service";
+import background from "./assets/background.svg";
 
 function LandingPage() {
   const { height, width } = UseWindowDimensions();
@@ -36,6 +38,12 @@ function LandingPage() {
     scrollY,
     [0, 500, 1000, 2000 - height],
     [0, 200, width - 300, width - 100]
+  );
+
+  const backGroundMovement = useTransform(
+    scrollY,
+    [0, 2000 - height],
+    [0, width - (3342 / 982) * height]
   );
 
   const visibility = useTransform(
@@ -75,14 +83,16 @@ function LandingPage() {
           <ScrollScreen>4</ScrollScreen>
         </ScrollInnerContainer>
       </ScrollOuterContainer> */}
-      <TestStickyContainer
+
+      <BackgroundImage
         style={{
-          left: leftMovement,
-          opacity: visibility,
+          left: backGroundMovement,
         }}
-      >
-        ACM Website
-      </TestStickyContainer>
+        src={background}
+        alt="hills background"
+      />
+
+      <TestStickyContainer>ACM Website</TestStickyContainer>
     </MainContainer>
   );
 }

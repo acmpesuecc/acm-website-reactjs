@@ -139,10 +139,19 @@ export const ScrollScreen = styled.div`
 
 export const MainContainer = styled.div`
   height: 2000px;
+  overflow: hidden;
+  position: relative;
 `;
 
-export const TestStickyContainer = styled(motion.span)`
-  position: sticky;
-  top: 0;
+export const BackgroundImage = styled(motion.img)`
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+`;
+
+export const TestStickyContainer = styled.span`
+  position: fixed;
+  top: 10vh;
+  left: 10vh;
   background-color: #77bce5;
 `;
