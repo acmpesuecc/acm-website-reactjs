@@ -6,8 +6,7 @@ import React, { useContext } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   MainContainer,
-  MotionMainContainer,
-  MotionMovingContainer,
+  TestStickyContainer,
   //   Name,
   //   Location,
   //   HeadingContainer,
@@ -36,7 +35,13 @@ function LandingPage() {
   const leftMovement = useTransform(
     scrollY,
     [0, 500, 1000, 2000 - height],
-    [0, 0, width - 100, width - 100]
+    [0, 200, width - 300, width - 100]
+  );
+
+  const visibility = useTransform(
+    scrollY,
+    [0, 500, 1000, 2000 - height],
+    [0, 1, 1, 0]
   );
 
   return (
@@ -70,17 +75,14 @@ function LandingPage() {
           <ScrollScreen>4</ScrollScreen>
         </ScrollInnerContainer>
       </ScrollOuterContainer> */}
-
-      <MotionMainContainer>
-        <MotionMovingContainer
-          style={{
-            left: leftMovement,
-            top: scrollY,
-          }}
-        >
-          ACM Website
-        </MotionMovingContainer>
-      </MotionMainContainer>
+      <TestStickyContainer
+        style={{
+          left: leftMovement,
+          opacity: visibility,
+        }}
+      >
+        ACM Website
+      </TestStickyContainer>
     </MainContainer>
   );
 }

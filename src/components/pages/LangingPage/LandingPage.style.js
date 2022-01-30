@@ -137,19 +137,12 @@ export const ScrollScreen = styled.div`
 
 //////////////////////////// Framer Motion Scrolling ////////////////////////////
 
-export const MainContainer = styled.div``;
-
-export const MotionMainContainer = styled(motion.div)`
+export const MainContainer = styled.div`
   height: 2000px;
-  position: relative;
-  overflow-x: hidden;
 `;
 
-export const MotionMovingContainer = styled(motion.div)`
-  color: white;
-  position: absolute;
-  overflow-x: hidden;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+export const TestStickyContainer = styled(motion.span)`
+  position: sticky;
+  top: 0;
+  background-color: #77bce5;
 `;
