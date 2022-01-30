@@ -5,7 +5,7 @@ import ThemeContextProvider from "./theme/ThemeContext";
 
 import LandingPage from "./components/pages/LangingPage/LandingPage";
 import NotFoundPage from "./components/pages/NotFoundPage/NotFoundPage";
-import Example from "./components/pages/EventsPage/EventsPage";
+import EventsPage from "./components/pages/EventsPage/EventsPage";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="acm-website-reactjs/" element={<LandingPage />} />
+          <Route path="/events" element={<EventsPage />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/events" element={<Example />} />
         </Routes>
       </Router>
     </ThemeContextProvider>
