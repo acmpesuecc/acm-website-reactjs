@@ -6,16 +6,18 @@ import React, { useContext } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   MainContainer,
-  Name,
-  Location,
-  HeadingContainer,
-  AboutSectionContainer,
-  AboutHeading,
-  AboutContent,
-  AboutImage,
-  ScrollOuterContainer,
-  ScrollInnerContainer,
-  ScrollScreen,
+  MotionMainContainer,
+  MotionMovingContainer,
+  //   Name,
+  //   Location,
+  //   HeadingContainer,
+  //   AboutSectionContainer,
+  //   AboutHeading,
+  //   AboutContent,
+  //   AboutImage,
+  //   ScrollOuterContainer,
+  //   ScrollInnerContainer,
+  //   ScrollScreen,
 } from "./LandingPage.style";
 import Footer from "../../custom/Footer/Footer";
 import NavBar from "../../custom/NavBar/NavBar";
@@ -25,15 +27,20 @@ import { ThemeContext } from "../../../theme/ThemeContext";
 import ThemeToggleButton from "../../custom/ThemeToggleButton";
 import QuoteCard from "./QuoteCard";
 import AboutPicture from "./assets/about.jpg";
+import UseWindowDimensions from "../../../services/UseWindowDimentions.service";
 
 function LandingPage() {
+  const { height, width } = UseWindowDimensions();
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const { scrollYProgress, scrollXProgress, scrollX, scrollY } =
-    useViewportScroll();
-  const scale = useTransform(scrollY, [0, 2000], [0, 2000]);
+  const { scrollX, scrollY } = useViewportScroll();
+  const leftMovement = useTransform(
+    scrollY,
+    [0, 500, 1000, 2000 - height],
+    [0, 0, width - 100, width - 100]
+  );
 
   return (
-    <>
+    <MainContainer>
       {/* <MainContainer>
       <NavBar />
       <HeadingContainer>
@@ -64,24 +71,17 @@ function LandingPage() {
         </ScrollInnerContainer>
       </ScrollOuterContainer> */}
 
-      <motion.div
-        style={{
-          width: "100vw",
-          height: "300vh",
-        }}
-      >
-        <motion.span
+      <MotionMainContainer>
+        <MotionMovingContainer
           style={{
-            color: "white",
-            position: "sticky",
-            top: "0",
-            left: scale,
+            left: leftMovement,
+            top: scrollY,
           }}
         >
-          hiii
-        </motion.span>
-      </motion.div>
-    </>
+          ACM Website
+        </MotionMovingContainer>
+      </MotionMainContainer>
+    </MainContainer>
   );
 }
 
