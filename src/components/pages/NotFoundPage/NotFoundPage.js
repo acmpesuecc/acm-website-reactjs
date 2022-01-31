@@ -94,7 +94,7 @@ function NotFoundPage() {
           You got lost in the <strong>404</strong> galaxy.
         </p>
         <p>
-          <a href="/">
+          <a href="/acm-website-reactjs">
             <button>Go back to earth.</button>
           </a>
         </p>
