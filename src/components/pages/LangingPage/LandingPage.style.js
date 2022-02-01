@@ -1,6 +1,60 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+///////////////////////////// NavBar Stuff //////////////////////////////
+
+export const NavBarContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  line-height: 10vh;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: saturate(180%) blur(3px);
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 1;
+`;
+export const NavbarName = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 40vw;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const NavBarItem = styled.div`
+  font-size: 1.2rem;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+//////////////////////////// Framer Motion Scrolling ////////////////////////////
+
+export const MainContainer = styled.div`
+  overflow: hidden;
+  position: relative;
+`;
+
+export const BackgroundImage = styled(motion.img)`
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+`;
+
+export const TestStickyContainer = styled.span`
+  position: fixed;
+  top: 5vh;
+  left: 5vh;
+  background-color: #77bce5;
+`;
+
 // export const LandingPageContainer = styled.div`
 //   padding: 20px 10%;
 
@@ -106,52 +160,31 @@ import { motion } from "framer-motion";
 
 //////////////////////////// Horizontal Scrolling ////////////////////////////
 
-export const ScrollOuterContainer = styled.div`
-  width: 100vh;
-  height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
+// export const ScrollOuterContainer = styled.div`
+//   width: 100vh;
+//   height: 100vw;
+//   transform: rotate(-90deg) translateX(-100vh);
+//   transform-origin: top left;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   position: absolute;
+//   scrollbar-width: none;
+//   -ms-overflow-style: none;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// `;
 
-export const ScrollInnerContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 400vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-`;
+// export const ScrollInnerContainer = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   width: 400vw;
+//   transform: rotate(90deg) translateY(-100vh);
+//   transform-origin: top left;
+// `;
 
-export const ScrollScreen = styled.div`
-  width: 100vw;
-  height: 100vh;
-  color: white;
-`;
-
-//////////////////////////// Framer Motion Scrolling ////////////////////////////
-
-export const MainContainer = styled.div`
-  height: 2000px;
-  overflow: hidden;
-  position: relative;
-`;
-
-export const BackgroundImage = styled(motion.img)`
-  position: fixed;
-  height: 100vh;
-  z-index: -1;
-`;
-
-export const TestStickyContainer = styled.span`
-  position: fixed;
-  top: 10vh;
-  left: 10vh;
-  background-color: #77bce5;
-`;
+// export const ScrollScreen = styled.div`
+//   width: 100vw;
+//   height: 100vh;
+//   color: white;
+// `;
