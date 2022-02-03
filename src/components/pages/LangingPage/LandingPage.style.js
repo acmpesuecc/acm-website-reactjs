@@ -1,40 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-///////////////////////////// NavBar Stuff //////////////////////////////
-
-export const NavBarContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 10vh;
-  line-height: 10vh;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: saturate(180%) blur(3px);
-  display: flex;
-  justify-content: space-evenly;
-  z-index: 1;
-`;
-export const NavbarName = styled.div`
-  font-size: 1.4rem;
-  font-weight: bold;
-  width: 40vw;
-  color: black;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const NavBarItem = styled.div`
-  font-size: 1.2rem;
-  color: black;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 //////////////////////////// Framer Motion Scrolling ////////////////////////////
 
 export const MainContainer = styled.div`

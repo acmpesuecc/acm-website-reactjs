@@ -2,15 +2,12 @@
 // https://tympanus.net/codrops/2019/12/16/scroll-refraction-and-shader-effects-in-three-js-and-react/
 // https://www.framer.com/tutorials/
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {
   MainContainer,
   TestStickyContainer,
   BackgroundImage,
-  NavBarContainer,
-  NavbarName,
-  NavBarItem,
 } from "./LandingPage.style";
 import Footer from "../../custom/Footer/Footer";
 // import NavBar from "../../custom/NavBar/NavBar";
@@ -22,19 +19,82 @@ import QuoteCard from "./QuoteCard";
 import AboutPicture from "./assets/about.jpg";
 import UseWindowDimensions from "../../../services/UseWindowDimentions.service";
 import background from "./assets/background.svg";
+import NavBar from "../../custom/NavBar/NavBar";
 
 function LandingPage() {
-  return (
-    <MainContainer>
-      <NavBarContainer>
-        <NavbarName>ACM PESU ECC</NavbarName>
-        <NavBarItem>About us</NavBarItem>
-        <NavBarItem>About us</NavBarItem>
-        <NavBarItem>About us</NavBarItem>
-      </NavBarContainer>
+  const backgroundImageWidth = 3342;
+  const [backgroundPosition, setBackgroundPosition] = useState(0);
+  const [backgroundIsScrolling, setBackgroundIsScrolling] = useState({
+    from: 0,
+    inMotion: false,
+  });
+  const { height, width } = UseWindowDimensions();
 
+  const onNavClick = (index) => {
+    setBackgroundIsScrolling((prev) => ({
+      ...prev,
+      from: index,
+    }));
+
+    if (index === 0) {
+      setBackgroundPosition(0);
+    } else if (index === 1) {
+      setBackgroundPosition(-300);
+    } else if (index === 2) {
+      setBackgroundPosition(-600);
+    } else if (index === 3) {
+      setBackgroundPosition(-900);
+    }
+  };
+
+  const onScroll = (event) => {
+    const scrollingUp = event.nativeEvent.wheelDelta > 0;
+    let nextStop = backgroundIsScrolling["from"];
+    if (scrollingUp) {
+      if (nextStop == 4) {
+        return;
+      } else {
+        nextStop = Math.min(nextStop + 1, 4);
+      }
+    } else {
+      if (nextStop == 0) {
+        return;
+      } else {
+        nextStop = Math.max(nextStop - 1, 0);
+      }
+    }
+
+    if (!backgroundIsScrolling["inMotion"]) {
+      onNavClick(nextStop);
+      setBackgroundIsScrolling((prev) => ({
+        ...prev,
+        inMotion: true,
+      }));
+
+      setTimeout(() => {
+        setBackgroundIsScrolling((prev) => ({
+          ...prev,
+          inMotion: false,
+        }));
+      }, 1000);
+    }
+  };
+
+  return (
+    <MainContainer onWheel={onScroll}>
+      <NavBar onNavClick={onNavClick} />
       <TestStickyContainer>ACM Website</TestStickyContainer>
-      <BackgroundImage style={{}} src={background} alt="hills background" />
+      <BackgroundImage
+        animate={{
+          x: backgroundPosition,
+        }}
+        transition={{
+          duration: 1,
+          type: "tween",
+        }}
+        src={background}
+        alt="hills background"
+      />
     </MainContainer>
   );
 }
