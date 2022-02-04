@@ -5,7 +5,7 @@ import { Card, Modal, Button } from "react-bootstrap";
 export const EventPageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 15vw;
+  padding: 3vw;
   justify-content: center;
 `;
 export const CardContainer = styled(Card)`
