@@ -1,17 +1,22 @@
 {
   "files": {
     "main.css": "/acm-website-reactjs/static/css/main.9a614cc1.css",
-    "main.js": "/acm-website-reactjs/static/js/main.2ec96bc1.js",
-    "static/media/about.jpg": "/acm-website-reactjs/static/media/about.ac883d818f0d59368e3a.jpg",
+    "main.js": "/acm-website-reactjs/static/js/main.9366fe13.js",
+    "static/media/Hacktoberfest2019.png": "/acm-website-reactjs/static/media/Hacktoberfest2019.dd697a970589dd80fda9.png",
+    "static/media/res_card.png": "/acm-website-reactjs/static/media/res_card.dc80e60af19a9aaf289d.png",
+    "static/media/oss_ses.jpg": "/acm-website-reactjs/static/media/oss_ses.2802b3d5e2f9e539af2c.jpg",
+    "static/media/Hacktoberfest2020.jpeg": "/acm-website-reactjs/static/media/Hacktoberfest2020.725ffc3c8b61157a7d73.jpeg",
+    "static/media/tensor2.png": "/acm-website-reactjs/static/media/tensor2.6a8c8081e3ece55dc772.png",
+    "static/media/hoc.jpg": "/acm-website-reactjs/static/media/hoc.0a7bfd72fe00e9fba3b5.jpg",
+    "static/media/tensor1.jpg": "/acm-website-reactjs/static/media/tensor1.81793999c3d595ee1633.jpg",
     "static/media/acmlogo.png": "/acm-website-reactjs/static/media/acmlogo.40bd1d68fd341df7fa16.png",
     "static/media/background.svg": "/acm-website-reactjs/static/media/background.03e4105310586c83b4aa34a275d08e60.svg",
-    "static/media/quoteIcon.svg": "/acm-website-reactjs/static/media/quoteIcon.7f879b6fa7e95f897c704c8581beb9f1.svg",
     "index.html": "/acm-website-reactjs/index.html",
     "main.9a614cc1.css.map": "/acm-website-reactjs/static/css/main.9a614cc1.css.map",
-    "main.2ec96bc1.js.map": "/acm-website-reactjs/static/js/main.2ec96bc1.js.map"
+    "main.9366fe13.js.map": "/acm-website-reactjs/static/js/main.9366fe13.js.map"
   },
   "entrypoints": [
     "static/css/main.9a614cc1.css",
-    "static/js/main.2ec96bc1.js"
+    "static/js/main.9366fe13.js"
   ]
 }
