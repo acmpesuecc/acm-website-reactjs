@@ -3,6 +3,9 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ACMLogo from "./assets/acmlogo.png";
+import ThemeToggleButton from "../ThemeToggleButton";
+import { useContext } from "react";
+import { ThemeContext } from "../../../theme/ThemeContext";
 
 // fix width of navbar buttons
 
@@ -17,13 +20,12 @@ const NavBarContainer = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 10vh;
   line-height: 10vh;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: saturate(180%) blur(3px);
   display: flex;
   justify-content: space-evenly;
-  z-index: 1;
+  z-index: 100;
 `;
 const NavbarName = styled.div`
   font-size: 1.4rem;
@@ -45,12 +47,16 @@ const NavBarItem = styled.div`
 `;
 
 function NavBar({ onNavClick }) {
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <NavBarContainer>
       <NavbarName onClick={() => onNavClick(0)}>ACM PESU ECC</NavbarName>
-      <NavBarItem onClick={() => onNavClick(1)}>About us</NavBarItem>
+      <NavBarItem onClick={() => onNavClick(1)}>Home</NavBarItem>
       <NavBarItem onClick={() => onNavClick(2)}>About us</NavBarItem>
-      <NavBarItem onClick={() => onNavClick(3)}>About us</NavBarItem>
+      <NavBarItem onClick={() => onNavClick(3)}>Events</NavBarItem>
+      <NavBarItem onClick={() => onNavClick(4)}>Team</NavBarItem>
+      <NavBarItem onClick={() => onNavClick(5)}>Contact Us</NavBarItem>
+      <ThemeToggleButton theme={theme} toggleTheme={toggleTheme} />
     </NavBarContainer>
   );
 }

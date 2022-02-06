@@ -3,25 +3,26 @@
 // https://www.framer.com/tutorials/
 
 import React, { useContext, useState } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import {
   MainContainer,
   TestStickyContainer,
   BackgroundImage,
 } from "./LandingPage.style";
-import Footer from "../../custom/Footer/Footer";
+// import Footer from "../../custom/Footer/Footer";
 // import NavBar from "../../custom/NavBar/NavBar";
 
-import { ThemeContext } from "../../../theme/ThemeContext";
+// import { ThemeContext } from "../../../theme/ThemeContext";
 
-import ThemeToggleButton from "../../custom/ThemeToggleButton";
-import QuoteCard from "./QuoteCard";
-import AboutPicture from "./assets/about.jpg";
+// import QuoteCard from "./QuoteCard";
+// import AboutPicture from "./assets/about.jpg";
 import UseWindowDimensions from "../../../services/UseWindowDimentions.service";
 import background from "./assets/background.svg";
 import NavBar from "../../custom/NavBar/NavBar";
+import Vehicle from "./Vehicle";
 
 function LandingPage() {
+  const navbarTabs = 6;
   const backgroundImageWidth = 3342;
   const [backgroundPosition, setBackgroundPosition] = useState(0);
   const [backgroundIsScrolling, setBackgroundIsScrolling] = useState({
@@ -39,10 +40,14 @@ function LandingPage() {
     if (index === 0) {
       setBackgroundPosition(0);
     } else if (index === 1) {
-      setBackgroundPosition(-300);
+      setBackgroundPosition(-200);
     } else if (index === 2) {
-      setBackgroundPosition(-600);
+      setBackgroundPosition(-400);
     } else if (index === 3) {
+      setBackgroundPosition(-600);
+    } else if (index === 4) {
+      setBackgroundPosition(-800);
+    } else if (index === 5) {
       setBackgroundPosition(-900);
     }
   };
@@ -51,10 +56,10 @@ function LandingPage() {
     const scrollingUp = event.nativeEvent.wheelDelta > 0;
     let nextStop = backgroundIsScrolling["from"];
     if (scrollingUp) {
-      if (nextStop == 4) {
+      if (nextStop == navbarTabs) {
         return;
       } else {
-        nextStop = Math.min(nextStop + 1, 4);
+        nextStop = Math.min(nextStop + 1, navbarTabs);
       }
     } else {
       if (nextStop == 0) {
@@ -81,21 +86,23 @@ function LandingPage() {
   };
 
   return (
-    <MainContainer onWheel={onScroll}>
-      <NavBar onNavClick={onNavClick} />
-      <TestStickyContainer>ACM Website</TestStickyContainer>
-      <BackgroundImage
-        animate={{
-          x: backgroundPosition,
-        }}
-        transition={{
-          duration: 1,
-          type: "tween",
-        }}
-        src={background}
-        alt="hills background"
-      />
-    </MainContainer>
+    <>
+      <Vehicle />
+      <MainContainer onWheel={onScroll}>
+        <NavBar onNavClick={onNavClick} />
+        <BackgroundImage
+          animate={{
+            x: backgroundPosition,
+          }}
+          transition={{
+            duration: 1,
+            type: "tween",
+          }}
+          src={background}
+          alt="hills background"
+        />
+      </MainContainer>
+    </>
   );
 }
 

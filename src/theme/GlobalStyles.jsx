@@ -9,9 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// #38AEE6
-// #1B99D4
-// #0d1017 org #0a0d12
 const colors = {
   myDarkColour: "#0a0d12",
   myBlue: "#1B99D4",
